@@ -11,16 +11,18 @@ namespace myShortStory
     {
         static void Main(string[] args)
         {
+            
+
             Console.WriteLine("Hello I am a short story creator, with \nthe information that" +
                 "you give me I will write an amazing story about your heros journey");
             Console.WriteLine("Name");
-            var name = Console.ReadLine();
+            string name = Console.ReadLine();
             Console.WriteLine("Age");
-            var age = Console.ReadLine();
+            string age = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Gender, male or female.");
-            var gender = Console.ReadLine();
+            string gender = Console.ReadLine();
             Console.WriteLine("What place have you always wanted to visit");
-            var location = Console.ReadLine();
+            string location = Console.ReadLine();
 
             if (gender == "male")
             {
@@ -29,17 +31,7 @@ namespace myShortStory
                 string Possessive = "His";
                 string possessive = "his";
 
-                Console.WriteLine( "  " + name + " was a brave young adventurer who had been tasked with " +
-                    "\njourneying through the treacherous forest to deliver a sacred artifact to a " +
-                    "\ndistant village. Despite being only " + age + " years old, " + pronoun +
-                    "\nhad already earned a reputation as one of the most fearless heroes in the land." +
-                    "\n\n   Armed with nothing but a sword and a fierce determination, " + name + " marched ever " +
-                    "\nonwards towards " + location + ". Along the way, " + pronoun + " battled countless" +
-                    "\nmonsters and overcame countless obstacles, always keeping the safety of the " +
-                    "\nartifact at the forefront of " + possessive + " mind. Though " +
-                    name + " \nfaced many moments of doubt and fear, " +
-                    pronoun + " never wavered, and ultimately \nsucceeded in completing " +
-                    possessive + " mission and delivering the artifact to its rightful owners.");
+                Console.WriteLine(storyCreator(name, age, gender, location, pronoun, possessive));
 
             }
             else
@@ -49,8 +41,22 @@ namespace myShortStory
                 string Possessive = "Her";
                 string possessive = "her";
 
+                Console.WriteLine(storyCreator(name, age, gender, location, pronoun, possessive));
 
-                Console.WriteLine(name + " was a brave young adventurer who had been tasked with " +
+            }
+
+
+
+
+
+
+            Console.ReadLine();
+        }
+
+
+        static string storyCreator(string name, string age, string gender, string location, string pronoun, string possessive)
+        {
+            string story =(name + " was a brave young adventurer who had been tasked with " +
                     "\njourneying through the treacherous forest to deliver a sacred artifact to a " +
                     "\ndistant village. Despite being only " + age + " years old, " + pronoun +
                     "\nhad already earned a reputation as one of the most fearless heroes in the land." +
@@ -61,15 +67,12 @@ namespace myShortStory
                     name + " faced many moments of doubt and fear, " +
                     pronoun + " never wavered, and ultimately succeeded in completing " +
                     possessive + " mission and delivering the artifact to its rightful owners.");
-            }
+            return story;
+        }
 
-            
-
-
-            Console.ReadLine();
+        
 
         }
-    }
 
 
 }
